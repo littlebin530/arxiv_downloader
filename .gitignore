@@ -1,0 +1,40 @@
+# Python 缓存和字节码
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 虚拟环境 (如果你在项目内创建了)
+# venv/
+# .venv/
+# env/
+# .env/
+# ENV/
+
+# VS Code 本地配置
+.vscode/
+
+# 日志文件 (run_pipeline.sh 生成的)
+logs/run_pipeline/*.log 
+# 或者更通用：
+# logs/**/*.log
+
+# 搜索结果JSON数据 (search.py 生成的，通常不希望版本控制这些动态数据)
+arxiv_search_data/
+# 或者更具体，如果你的 run_pipeline.sh 中 DEFAULT_JSON_OUTPUT_BASE_DIR 是这个
+
+# 下载的PDF文件 (通常不希望版本控制大量二进制文件)
+arxiv_downloaded_papers/
+# 或者更具体，如果你的 run_pipeline.sh 中 DEFAULT_PDF_OUTPUT_BASE_DIR 是这个
+
+# 下载失败的日志 (download.py 或 retry.py 生成的)
+# 如果 failed_downloads.json 是在 arxiv_downloaded_papers/ 目录下，则上面的规则已覆盖
+# 如果在项目根目录，则添加：
+# failed_downloads.json 
+# *.json # 如果你有很多其他不想追踪的JSON，但要小心别排除掉必要的配置文件
+
+# 损坏PDF的日志 (verify_pdfs.py 生成的)
+corrupted_pdf_logs/
+
+# 根据你的实际情况调整！
+# 例如，如果你有特定的配置文件包含敏感信息，也应该加入。
